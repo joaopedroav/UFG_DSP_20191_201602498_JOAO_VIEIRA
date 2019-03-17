@@ -1,1 +1,6 @@
 Este é o conteúdo do arquivo.
+Esta é a linha acrescida - número 1
+Esta é a linha acrescida - número 2
+Esta é a linha acrescida - número 3
+Esta é a linha acrescida - número 4
+Esta é a linha acrescida - número 5
