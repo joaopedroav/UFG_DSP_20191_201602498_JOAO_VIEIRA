@@ -6,14 +6,14 @@ public class EditarArquivo {
 
     private final static int numLinhas = 5;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException {
         String caminho = "src/main/resources/aula0104.txt";
         String conteudo = gerarLinhas(numLinhas);
         Arquivo.gravar(conteudo, caminho);
         Arquivo.ler(caminho);
     }
 
-    public static String gerarLinhas(int num) {
+    public static String gerarLinhas(final int num) {
         String linhas = "";
         for (int i = 0; i < num; i++) {
             if (i == 0) {

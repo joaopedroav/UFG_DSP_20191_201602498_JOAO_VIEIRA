@@ -18,7 +18,7 @@ public class UnidadeFederacao {
         this.num = numero;
     }
 
-    public int getUfed_idenufed_sigl() {
+    public final int getUfed_idenufed_sigl() {
         return ufed_idenufed_sigl;
     }
 
@@ -26,7 +26,7 @@ public class UnidadeFederacao {
         this.ufed_idenufed_sigl = ufed_idenufed_sigl;
     }
 
-    public String getUfed_nome() {
+    public final String getUfed_nome() {
         return ufed_nome;
     }
 
@@ -34,7 +34,7 @@ public class UnidadeFederacao {
         this.ufed_nome = ufed_nome;
     }
 
-    public String getUfed_codg_regiao() {
+    public final String getUfed_codg_regiao() {
         return ufed_codg_regiao;
     }
 
@@ -42,7 +42,7 @@ public class UnidadeFederacao {
         this.ufed_codg_regiao = ufed_codg_regiao;
     }
 
-    public int getNum() {
+    public final int getNum() {
         return num;
     }
 

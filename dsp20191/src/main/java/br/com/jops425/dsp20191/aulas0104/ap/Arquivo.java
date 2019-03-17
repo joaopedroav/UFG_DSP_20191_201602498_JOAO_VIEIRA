@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class Arquivo {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException {
         String conteudo = "Este é o conteúdo do arquivo.";
         String caminho = "src/main/resources/aula0104.txt";
         gravar(conteudo, caminho);

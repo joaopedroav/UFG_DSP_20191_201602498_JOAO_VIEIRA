@@ -7,7 +7,13 @@ import java.util.ArrayList;
 
 public class ArquivoCSV {
 
-    public static void main(String[] args) {
+    private static final int MAX_LINHAS = 28;
+
+    private static final int IND3 = 2;
+
+    private static final int IND4 = 3;
+
+    public static void main(final String[] args) {
         String caminho = "src/main/resources/UF.csv";
         ArrayList<UnidadeFederacao> unidadeFederacao = lerCSV(caminho);
         for (int i = 0; i < unidadeFederacao.size(); i++) {
@@ -25,11 +31,11 @@ public class ArquivoCSV {
             BufferedReader br = new BufferedReader(fr);
 
             while ((linha = br.readLine()) != null) {
-                if (numLinhasArq > 0) {
+                if (numLinhasArq > 0 && numLinhasArq < MAX_LINHAS) {
                     if (linha != "") {
                         celulas = linha.split(",");
                         unidadeFederacao.add(new UnidadeFederacao(Integer.valueOf(celulas[0]),
-                                celulas[1], celulas[2], Integer.valueOf(celulas[3])));
+                                celulas[1], celulas[IND3], Integer.valueOf(celulas[IND4])));
                     }
                 }
                 numLinhasArq++;
