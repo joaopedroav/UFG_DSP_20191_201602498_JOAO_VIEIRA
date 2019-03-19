@@ -1,4 +1,4 @@
-package br.com.jops425.dsp20191.aulas0104.ap;
+package br.com.jops425.dsp20191.aulas0104.as;
 
 import java.io.FileReader;
 import java.io.BufferedReader;

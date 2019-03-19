@@ -1,4 +1,6 @@
-package br.com.jops425.dsp20191.aulas0104.ap;
+package br.com.jops425.dsp20191.aulas0104.as;
+
+import br.com.jops425.dsp20191.aulas0104.ap.Arquivo;
 
 import java.io.IOException;
 
