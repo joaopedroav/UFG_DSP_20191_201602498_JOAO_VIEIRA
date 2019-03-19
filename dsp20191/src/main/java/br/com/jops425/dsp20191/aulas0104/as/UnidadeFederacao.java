@@ -51,8 +51,8 @@ public class UnidadeFederacao {
     }
 
     public final String toString() {
-        String uf = this.ufed_idenufed_sigl + " " + this.ufed_nome + " "
-                + this.ufed_codg_regiao + " " + this.num;
+        String uf = this.ufed_idenufed_sigl + "\t" + this.ufed_nome + "\t"
+                + this.ufed_codg_regiao + "  " + this.num;
         return uf;
     }
 }
