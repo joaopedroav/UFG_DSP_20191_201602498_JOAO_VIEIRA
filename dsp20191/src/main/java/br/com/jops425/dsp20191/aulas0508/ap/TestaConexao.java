@@ -7,18 +7,14 @@ import java.util.Properties;
 
 public class TestaConexao {
 
-    private static Conexao conexao = new Conexao();
+    private Conexao conexao = new Conexao();
 
-    private static Usuario usuario = new Usuario();
+    private Usuario usuario = new Usuario();
 
     InputStream inputStream;
 
-    public void main(final String[] args) throws IOException {
-        String caminhoArquivo = "src/main/resources/conexao.properties";
-        setDados(caminhoArquivo);
-    }
-
-    public void setDados(final String caminhoArquivo) throws IOException {
+    public String setDados(final String caminhoArquivo) throws IOException {
+        StringBuilder sb = new StringBuilder();
         try {
             Properties properties = new Properties();
             inputStream = getClass().getClassLoader().getResourceAsStream(caminhoArquivo);
@@ -35,11 +31,27 @@ public class TestaConexao {
             conexao.setSgbd(properties.getProperty("sgbd"));
             conexao.setTipoConexao(properties.getProperty("tipoConexao"));
             conexao.setBancoDados(properties.getProperty("bancoDados"));
-            conexao.setUrlBd(properties.getProperty("url"));
+            conexao.setUrlBd(properties.getProperty("urlBd"));
+
+            sb.append(usuario.getNome());
+            sb.append("\n");
+            sb.append(usuario.getLogin());
+            sb.append("\n");
+            sb.append(usuario.getSenha());
+            sb.append("\n");
+            sb.append(conexao.getSgbd());
+            sb.append("\n");
+            sb.append(conexao.getTipoConexao());
+            sb.append("\n");
+            sb.append(conexao.getBancoDados());
+            sb.append("\n");
+            sb.append(conexao.getUrlBd());
+            sb.append("\n");
         } catch (Exception excepion) {
             System.out.println(excepion);
         } finally {
             inputStream.close();
+            return sb.toString();
         }
     }
 
