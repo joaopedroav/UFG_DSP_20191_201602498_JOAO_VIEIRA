@@ -31,7 +31,7 @@ public class Usuario {
     }
 
     public void setSenha(final String senha0) {
-        this.senha = senha;
+        this.senha = senha0;
     }
 
 }
