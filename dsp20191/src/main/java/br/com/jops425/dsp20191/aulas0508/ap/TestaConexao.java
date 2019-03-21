@@ -33,6 +33,9 @@ public class TestaConexao {
             conexao.setBancoDados(properties.getProperty("bancoDados"));
             conexao.setUrlBd(properties.getProperty("urlBd"));
 
+            final String OS = System.getProperty("os.name").toLowerCase();
+            conexao.setSistemaOperacional(OS);
+
             sb.append(usuario.getNome());
             sb.append("\n");
             sb.append(usuario.getLogin());
@@ -46,6 +49,8 @@ public class TestaConexao {
             sb.append(conexao.getBancoDados());
             sb.append("\n");
             sb.append(conexao.getUrlBd());
+            sb.append("\n");
+            sb.append(conexao.getSistemaOperacional());
             sb.append("\n");
         } catch (Exception excepion) {
             System.out.println(excepion);
