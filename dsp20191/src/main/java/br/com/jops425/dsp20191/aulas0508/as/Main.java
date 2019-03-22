@@ -1,8 +1,8 @@
 package br.com.jops425.dsp20191.aulas0508.as;
 
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
+import br.com.jops425.dsp20191.aulas0104.ap.Arquivo;
 
 public class Main {
 
@@ -20,7 +20,7 @@ public class Main {
         try {
             FileOutputStream fos = new FileOutputStream(caminho);
             DataOutputStream dos = new DataOutputStream(fos);
-            dos.writeChars(aluno.getNome());
+            dos.writeUTF(aluno.getNome());
             dos.writeLong(aluno.getMatricula());
             dos.writeDouble(aluno.getNota1());
             dos.writeDouble(aluno.getNota2());
@@ -28,6 +28,10 @@ public class Main {
         } catch (Exception exc) {
             System.out.println(exc);
         }
+    }
+
+    public static void lerArquivo(String caminho) {
+
     }
 
 }
