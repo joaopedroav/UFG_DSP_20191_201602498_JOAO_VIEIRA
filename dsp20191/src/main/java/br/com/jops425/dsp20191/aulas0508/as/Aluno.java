@@ -10,6 +10,13 @@ public class Aluno {
 
     private double nota2;
 
+    public Aluno(String nom, long matric, double not1, double not2) {
+        this.nome = nom;
+        this.matricula = matric;
+        this.nota1 = not1;
+        this.nota2 = not2;
+    }
+
     public String getNome() {
         return nome;
     }
