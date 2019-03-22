@@ -10,13 +10,6 @@ public class Aluno {
 
     private double nota2;
 
-    public Aluno(String nom, long matric, double not1, double not2) {
-        this.nome = nom;
-        this.matricula = matric;
-        this.nota1 = not1;
-        this.nota2 = not2;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -47,6 +40,10 @@ public class Aluno {
 
     public void setNota2(double nota2) {
         this.nota2 = nota2;
+    }
+
+    public double media(final double nota1, final double nota2) {
+        return (nota1 + nota2) / 2;
     }
 
 }
