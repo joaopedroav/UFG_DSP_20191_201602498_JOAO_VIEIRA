@@ -17,10 +17,12 @@ public class LerXML {
     public static void main(String[] args) {
         final String caminho = "src/main/resources/students.xml";
         final String tags = "/class/student";
-        ler(caminho, tags);
+        List<Node> nodes = ler(caminho, tags);
+        imprimir(nodes);
     }
 
-    public static void ler(final String caminho, final String tags) {
+    public static List<Node> ler(final String caminho, final String tags) {
+        List<Node> nodes = null;
         try {
             File file = new File(caminho);
             SAXReader sax = new SAXReader();
@@ -28,27 +30,26 @@ public class LerXML {
 
             Element element = document.getRootElement();
 
-            List<Node> nodes = document.selectNodes(tags);
-
-            for (Node no : nodes) {
-                if (no.selectSingleNode("matricula").getText().equals("201602498")) {
-                    System.out.println(no.selectSingleNode("matricula").getText());
-                    System.out.println(no.selectSingleNode("firstname").getText());
-                    System.out.println(no.selectSingleNode("lastname").getText());
-                    System.out.println(no.selectSingleNode("nickname").getText());
-                    List<Node> subnode = no.selectNodes("frequencia/aulas");
-                    for (Node subno : subnode) {
-//                    System.out.println(subno.valueOf("@numero"));
-//                    System.out.println(subno.getText());
-                        System.out.printf("Aulas %s: %s\n", subno.valueOf("@numero"), subno.getText());
-                    }
-                    System.out.println();
-                    System.out.println("\n");
-                }
-            }
+            nodes = document.selectNodes(tags);
 
         } catch (DocumentException e) {
             e.printStackTrace();
+        }
+        return nodes;
+    }
+
+    public static void imprimir(List<Node> nodes) {
+        for (Node no : nodes) {
+            if (no.selectSingleNode("matricula").getText().equals("201602498")) {
+                System.out.println(no.selectSingleNode("matricula").getText());
+                System.out.println(no.selectSingleNode("firstname").getText());
+                System.out.println(no.selectSingleNode("lastname").getText());
+                System.out.println(no.selectSingleNode("nickname").getText());
+                List<Node> subnode = no.selectNodes("frequencia/aulas");
+                for (Node subno : subnode) {
+                    System.out.printf("Aulas %s: %s\n", subno.valueOf("@numero"), subno.getText());
+                }
+            }
         }
     }
 }
