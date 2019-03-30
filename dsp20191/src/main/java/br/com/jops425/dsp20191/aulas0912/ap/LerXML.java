@@ -90,6 +90,8 @@ public class LerXML {
             XMLWriter writer;
             writer = new XMLWriter( System.out, format );
             writer.write( document );
+            writer.flush();
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e) {
