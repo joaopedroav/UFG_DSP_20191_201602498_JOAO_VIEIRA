@@ -25,11 +25,12 @@ public class LerXML {
         final String tags = "/class/student";
         List<Node> nodes = ler(caminho, tags);
         imprimir(nodes);
-        gerar();
+        gerar(nodes);
     }
 
     public static List<Node> ler(final String caminho, final String tags) {
         List<Node> nodes = null;
+        Node node = null;
         try {
             File file = new File(caminho);
             SAXReader sax = new SAXReader();
@@ -60,26 +61,30 @@ public class LerXML {
         }
     }
 
-    public static void gerar() {
+    public static void gerar(List<Node> nodes) {
         try {
-            Document document = DocumentHelper.createDocument();
-            Element root = document.addElement( "class" );
-            Element studentElement = root.addElement("students");
+            Document document = null;
+            for (Node no : nodes) {
+                if (no.selectSingleNode("matricula").getText().equals("201602498")) {
+                    document = DocumentHelper.createDocument();
+                    Element root = document.addElement( "class" );
+                    Element studentElement = root.addElement("students");
 
-            studentElement.addElement("matricula").addText("201602498");
-            studentElement.addElement("firstname").addText("JOÃO PEDRO");
-            studentElement.addElement("lastname").addText("VIEIRA");
-            studentElement.addElement("nickname").addText("joao.vieira");
+                    studentElement.addElement("matricula").addText(no.selectSingleNode("matricula").getText());
+                    studentElement.addElement("firstname").addText(no.selectSingleNode("firstname").getText());
+                    studentElement.addElement("lastname").addText(no.selectSingleNode("lastname").getText());
+                    studentElement.addElement("nickname").addText(no.selectSingleNode("nickname").getText());
 
-            Element frequencyElement = studentElement.addElement("frequencia");
+                    Element frequencyElement = studentElement.addElement("frequencia");
 
-            frequencyElement.addElement("aulas")
-                    .addAttribute("numero", "0104")
-                    .addText("P");
-
-            frequencyElement.addElement("aulas")
-                    .addAttribute("numero", "0508")
-                    .addText("P");
+                    List<Node> subnode = no.selectNodes("frequencia/aulas");
+                    for (Node subno : subnode) {
+                        frequencyElement.addElement("aulas")
+                            .addAttribute("numero", subno.valueOf("@numero"))
+                            .addText(subno.getText());
+                    }
+                }
+            }
 
             OutputFormat format = OutputFormat.createPrettyPrint();
             XMLWriter writer;
