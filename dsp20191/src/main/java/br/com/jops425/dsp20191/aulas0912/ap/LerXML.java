@@ -31,17 +31,20 @@ public class LerXML {
             List<Node> nodes = document.selectNodes(tags);
 
             for (Node no : nodes) {
-                System.out.println(no.selectSingleNode("matricula").getText());
-                System.out.println(no.selectSingleNode("firstname").getText());
-                System.out.println(no.selectSingleNode("lastname").getText());
-                System.out.println(no.selectSingleNode("nickname").getText());
-                List<Node> subnode = no.selectNodes("frequencia/aulas");
-                for (Node subno : subnode) {
-                    System.out.println(subno.valueOf("@numero"));
-                    System.out.println(subno.getText());
+                if (no.selectSingleNode("matricula").getText().equals("201602498")) {
+                    System.out.println(no.selectSingleNode("matricula").getText());
+                    System.out.println(no.selectSingleNode("firstname").getText());
+                    System.out.println(no.selectSingleNode("lastname").getText());
+                    System.out.println(no.selectSingleNode("nickname").getText());
+                    List<Node> subnode = no.selectNodes("frequencia/aulas");
+                    for (Node subno : subnode) {
+//                    System.out.println(subno.valueOf("@numero"));
+//                    System.out.println(subno.getText());
+                        System.out.printf("Aulas %s: %s\n", subno.valueOf("@numero"), subno.getText());
+                    }
+                    System.out.println();
+                    System.out.println("\n");
                 }
-                System.out.println();
-                System.out.println("\n");
             }
 
         } catch (DocumentException e) {
