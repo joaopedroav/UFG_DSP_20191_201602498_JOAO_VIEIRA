@@ -1,4 +1,4 @@
-package br.com.jops425.dsp20191.aulas1316.ap;
+package br.com.jops425.dsp20191.aulas1316.ap.models;
 
 import java.util.Date;
 

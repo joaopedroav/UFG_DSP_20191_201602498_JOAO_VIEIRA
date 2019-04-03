@@ -1,4 +1,4 @@
-package br.com.jops425.dsp20191.aulas1316.ap;
+package br.com.jops425.dsp20191.aulas1316.ap.models;
 
 /**
  * Created by aluno on 03/04/19.
