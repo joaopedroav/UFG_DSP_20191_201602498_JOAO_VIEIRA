@@ -1,4 +1,4 @@
-package br.com.jops425.dsp20191.aulas1316.ap.exceptions;
+package br.com.jops425.dsp20191.aulas1316.ap.main;
 
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.alteracao.AddFKTableLotacao;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.criacao.CreateTableCargo;
