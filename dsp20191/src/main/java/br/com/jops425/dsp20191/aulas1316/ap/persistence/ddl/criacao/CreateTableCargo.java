@@ -14,7 +14,7 @@ public class CreateTableCargo extends PersistenciaJdbc {
                 "id LONG NOT NULL PRIMARY KEY,\n" +
                 "nome VARCHAR(255) NOT NULL\n" +
                 ")";
-        
+
         stmt.executeUpdate(sql);
 
         System.out.println("Tabela Cargo criada com sucesso!");
