@@ -9,7 +9,8 @@ public class InsertLotacao extends PersistenciaJdbc {
 
         preparaPersistencia();
 
-        String sql = "INSERT INTO LOTACAO VALUES(" + lotacao.getId() +
+        String sql = "INSERT INTO LOTACAO " +
+                "VALUES(" + lotacao.getId() +
                 "," + lotacao.getDataInicial() +
                 "," + lotacao.getDataFinal() +
                 "," + lotacao.getCargoId() +

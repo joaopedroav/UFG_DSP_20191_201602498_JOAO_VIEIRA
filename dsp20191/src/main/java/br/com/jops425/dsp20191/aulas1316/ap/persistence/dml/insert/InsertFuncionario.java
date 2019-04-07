@@ -9,7 +9,8 @@ public class InsertFuncionario extends PersistenciaJdbc {
 
         preparaPersistencia();
 
-        String sql = "INSERT INTO FUNCIONARIO VALUES(" + funcionario.getId() +
+        String sql = "INSERT INTO FUNCIONARIO " +
+                "VALUES(" + funcionario.getId() +
                 "," + funcionario.getNome() +
                 "," + funcionario.getMatricula() +
                 ")";

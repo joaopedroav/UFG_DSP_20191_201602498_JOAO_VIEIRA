@@ -13,9 +13,9 @@ public class Lotacao {
 
     private Date dataFinal;
 
-    private int cargoId;
+    private String cargoId;
 
-    private int departamentoId;
+    private String departamentoId;
 
     public long getId() {
         return id;
@@ -41,19 +41,19 @@ public class Lotacao {
         this.dataFinal = dataFinal;
     }
 
-    public int getCargoId() {
+    public String getCargoId() {
         return cargoId;
     }
 
-    public void setCargoId(int cargoId) {
+    public void setCargoId(String cargoId) {
         this.cargoId = cargoId;
     }
 
-    public int getDepartamentoId() {
+    public String getDepartamentoId() {
         return departamentoId;
     }
 
-    public void setDepartamentoId(int departamentoId) {
+    public void setDepartamentoId(String departamentoId) {
         this.departamentoId = departamentoId;
     }
 }
