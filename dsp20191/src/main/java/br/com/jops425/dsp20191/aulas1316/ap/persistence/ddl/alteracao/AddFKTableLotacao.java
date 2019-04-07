@@ -11,8 +11,8 @@ public class AddFKTableLotacao extends PersistenciaJdbc {
         System.out.println("Alterando a Tabela Lotação");
 
         String sql = "ALTER TABLE LOTACAO\n" +
-                "ADD FOREIGN (id_cargo) REFERENCES CARGO(id) ON DELETE CASCADE\n" +
-                "ADD FOREIGN (id_departamento) REFERENCES DEPARTAMENTO(id) ON DELETE CASCADE";
+                "ADD FOREIGN KEY (id_cargo) REFERENCES CARGO(id) ON DELETE CASCADE\n" +
+                "ADD FOREIGN KEY (id_departamento) REFERENCES DEPARTAMENTO(id) ON DELETE CASCADE";
 
         stmt.executeUpdate(sql);
 

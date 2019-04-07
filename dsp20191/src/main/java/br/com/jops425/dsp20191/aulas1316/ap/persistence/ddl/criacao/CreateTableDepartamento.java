@@ -11,7 +11,7 @@ public class CreateTableDepartamento extends PersistenciaJdbc {
         System.out.println("Criando a tabela Departamento");
 
         String sql = "CREATE TABLE IF NOT EXISTS DEPARTAMENTO(\n" +
-                "id LONG NOT NULL PRIMARY KEY,\n" +
+                "id VARCHAR(255) NOT NULL PRIMARY KEY,\n" +
                 "nome VARCHAR(255) NOT NULL\n" +
                 ")";
 
