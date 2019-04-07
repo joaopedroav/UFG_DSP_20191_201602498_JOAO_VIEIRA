@@ -1,4 +1,4 @@
-package br.com.jops425.dsp20191.aulas1316.ap.connection;
+package br.com.jops425.dsp20191.aulas1316.ap.persistence.connection;
 
 import br.com.jops425.dsp20191.aulas1316.ap.exceptions.InvalidDataBaseTypeException;
 

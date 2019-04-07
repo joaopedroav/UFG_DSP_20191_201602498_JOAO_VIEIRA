@@ -1,7 +1,0 @@
-CREATE TABLE LOTACAO(
-id LONG NOT NULL PRIMARY KEY,
-data_inicial DATE NOT NULL,
-data_final DATE NOT NULL,
-id_cargo VARCHAR(255) NOT NULL,
-id_departamento VARCHAR(255) NOT NULL
-);
