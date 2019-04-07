@@ -13,7 +13,47 @@ public class Lotacao {
 
     private Date dataFinal;
 
-    private Cargo cargo;
+    private int cargoId;
 
-    private Departamento departamento;
+    private int departamentoId;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Date getDataInicial() {
+        return dataInicial;
+    }
+
+    public void setDataInicial(Date dataInicial) {
+        this.dataInicial = dataInicial;
+    }
+
+    public Date getDataFinal() {
+        return dataFinal;
+    }
+
+    public void setDataFinal(Date dataFinal) {
+        this.dataFinal = dataFinal;
+    }
+
+    public int getCargoId() {
+        return cargoId;
+    }
+
+    public void setCargoId(int cargoId) {
+        this.cargoId = cargoId;
+    }
+
+    public int getDepartamentoId() {
+        return departamentoId;
+    }
+
+    public void setDepartamentoId(int departamentoId) {
+        this.departamentoId = departamentoId;
+    }
 }

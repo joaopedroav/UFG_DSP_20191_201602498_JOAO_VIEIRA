@@ -17,7 +17,7 @@ public class AddFKTableLotacao extends PersistenciaJdbc {
         stmt.executeUpdate(sql);
 
         System.out.println("Tabela Lotação alterada com sucesso!");
-        
+
         stmt.close();
         connection.close();
         return true;
