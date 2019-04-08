@@ -10,9 +10,9 @@ public class InsertDepartamento extends PersistenciaJdbc {
         preparaPersistencia();
 
         String sql = "INSERT INTO DEPARTAMENTO " +
-                "VALUES(" + departamento.getId() +
-                "," + departamento.getNome() +
-                ")";
+                "VALUES('" + departamento.getId() +
+                "','" + departamento.getNome() +
+                "')";
 
         stmt.executeUpdate(sql);
         System.out.println("O Departamento foi persistido corretamente.");

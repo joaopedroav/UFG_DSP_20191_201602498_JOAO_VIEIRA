@@ -13,7 +13,7 @@ public class CreateTableFuncionario extends PersistenciaJdbc {
         String sql = "CREATE TABLE IF NOT EXISTS FUNCIONARIO(\n" +
                 "id LONG NOT NULL PRIMARY KEY,\n" +
                 "nome VARCHAR(255) NOT NULL,\n" +
-                "matricula VARCHAR(255) NOT NULL\n" +
+                "matricula LONG NOT NULL\n" +
                 ")";
 
         stmt.executeUpdate(sql);

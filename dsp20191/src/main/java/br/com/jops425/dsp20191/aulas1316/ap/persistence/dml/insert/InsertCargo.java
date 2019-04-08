@@ -10,9 +10,9 @@ public class InsertCargo extends PersistenciaJdbc {
         preparaPersistencia();
 
         String sql = "INSERT INTO CARGO " +
-                "VALUES(" + cargo.getId() +
-                "," + cargo.getNome() +
-                ")";
+                "VALUES('" + cargo.getId() +
+                "','" + cargo.getNome() +
+                "')";
 
         stmt.executeUpdate(sql);
         System.out.println("O Cargo foi persistido corretamente.");

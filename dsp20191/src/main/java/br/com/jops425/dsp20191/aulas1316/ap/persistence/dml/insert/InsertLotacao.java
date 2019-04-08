@@ -13,9 +13,9 @@ public class InsertLotacao extends PersistenciaJdbc {
                 "VALUES(" + lotacao.getId() +
                 "," + lotacao.getDataInicial() +
                 "," + lotacao.getDataFinal() +
-                "," + lotacao.getCargoId() +
-                "," + lotacao.getDepartamentoId() +
-                ")";
+                ",'" + lotacao.getCargoId() +
+                "','" + lotacao.getDepartamentoId() +
+                "')";
 
         stmt.executeUpdate(sql);
         System.out.println("A Lotação foi persistida corretamente.");
