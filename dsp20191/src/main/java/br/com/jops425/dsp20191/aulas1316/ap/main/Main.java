@@ -3,12 +3,15 @@ package br.com.jops425.dsp20191.aulas1316.ap.main;
 import br.com.jops425.dsp20191.aulas1316.ap.models.Cargo;
 import br.com.jops425.dsp20191.aulas1316.ap.models.Departamento;
 import br.com.jops425.dsp20191.aulas1316.ap.models.Funcionario;
+import br.com.jops425.dsp20191.aulas1316.ap.models.Lotacao;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.criacao.CreateTableCargo;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.criacao.CreateTableDepartamento;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.criacao.CreateTableFuncionario;
+import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.criacao.CreateTableLotacao;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertCargo;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertDepartamento;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertFuncionario;
+import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertLotacao;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.query.QueryFuncionario;
 
 import java.util.ArrayList;
@@ -52,8 +55,10 @@ public class Main {
             insertCargo.persisteCargo(cargos[k]);
         }
 
-
-
+        Lotacao[] lots = new Lotacao[TAMF];
+        CreateTableLotacao createTableLotacao = new CreateTableLotacao();
+        createTableLotacao.criaTabela();
+        InsertLotacao insertLotacao = new InsertLotacao();
     }
 
     public static Funcionario preencheFuncionario(long id) {
