@@ -52,6 +52,8 @@ public class Main {
             insertCargo.persisteCargo(cargos[k]);
         }
 
+
+
     }
 
     public static Funcionario preencheFuncionario(long id) {
