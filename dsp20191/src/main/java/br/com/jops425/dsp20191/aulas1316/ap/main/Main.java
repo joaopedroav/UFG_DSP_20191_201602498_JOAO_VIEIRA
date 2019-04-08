@@ -28,7 +28,7 @@ public class Main {
         InsertFuncionario insertFuncionario = new InsertFuncionario();
 
         for (int i = 0; i < TAMF; i++) {
-            funcs[i] = preencheFuncionario(12340 * (i + 1));
+            funcs[i] = preencheFuncionario(i);
             insertFuncionario.persisteFuncionario(funcs[i]);
         }
 
@@ -38,7 +38,7 @@ public class Main {
         InsertDepartamento insertDepartamento = new InsertDepartamento();
 
         for (int j = 0; j < TAMD; j++) {
-            depts[j] = preencheDepartamento(Integer.toString(10021 * (j + 1)));
+            depts[j] = preencheDepartamento(Integer.toString(j));
             insertDepartamento.persisteDepartamento(depts[j]);
         }
 
@@ -48,16 +48,8 @@ public class Main {
         InsertCargo insertCargo = new InsertCargo();
 
         for (int k = 0; k < TAMC; k++) {
-            cargos[k] = preencheCargo(Integer.toString(12002 * (k + 1)));
+            cargos[k] = preencheCargo(Integer.toString(k));
             insertCargo.persisteCargo(cargos[k]);
-        }
-
-        QueryFuncionario queryFuncionario = new QueryFuncionario();
-        ArrayList<Funcionario> funcionarios = queryFuncionario.queryById();
-        for (Funcionario func : funcionarios) {
-            System.out.println(func.getId());
-            System.out.println(func.getNome());
-            System.out.println(func.getMatricula());
         }
 
     }
@@ -66,7 +58,7 @@ public class Main {
         Funcionario func = new Funcionario();
         func.setId(id);
         func.setNome("Funcionário " + id);
-        func.setMatricula(123456 + id);
+        func.setMatricula(id);
         return func;
     }
 
