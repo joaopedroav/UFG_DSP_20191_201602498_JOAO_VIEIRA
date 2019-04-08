@@ -10,7 +10,7 @@ public class CreateTableCargo extends PersistenciaJdbc {
 
         System.out.println("Criando a tabela Cargo");
 
-        String sql = "CREATE TABLE IF NOT EXISTS DEPARTAMENTO(\n" +
+        String sql = "CREATE TABLE IF NOT EXISTS CARGO(\n" +
                 "id VARCHAR(255) NOT NULL PRIMARY KEY,\n" +
                 "nome VARCHAR(255) NOT NULL\n" +
                 ")";

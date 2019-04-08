@@ -5,6 +5,8 @@ import br.com.jops425.dsp20191.aulas1316.ap.persistence.connection.PersistenciaJ
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class QueryFuncionario extends PersistenciaJdbc {
 
@@ -14,18 +16,21 @@ public class QueryFuncionario extends PersistenciaJdbc {
         funcionario = new Funcionario();
     }
 
-    public Funcionario queryById(long id) throws Exception {
+    public ArrayList<Funcionario> queryById() throws Exception {
         preparaPersistencia();
 
-        String sql = "SELECT * FROM FUNCIONARIO WHERE id = ?";
-        PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setLong(1, id);
+        ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-        ResultSet rs = ps.executeQuery(  );
+        String sql = "SELECT * FROM FUNCIONARIO";
+        PreparedStatement ps = connection.prepareStatement(sql);
+//        ps.setLong(1, id);
+
+        ResultSet rs = ps.executeQuery( );
         while(rs.next()){
             funcionario.setId(rs.getLong("id"));
             funcionario.setNome(rs.getString("nome"));
             funcionario.setMatricula(rs.getLong("matricula"));
+            funcionarios.add(funcionario);
         }
 
         rs.close();
@@ -33,6 +38,6 @@ public class QueryFuncionario extends PersistenciaJdbc {
         stmt.close();
         connection.close();
 
-        return funcionario;
+        return funcionarios;
     }
 }

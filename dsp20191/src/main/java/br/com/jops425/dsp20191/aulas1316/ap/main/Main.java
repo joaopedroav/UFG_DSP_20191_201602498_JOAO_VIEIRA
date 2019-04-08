@@ -9,6 +9,9 @@ import br.com.jops425.dsp20191.aulas1316.ap.persistence.ddl.criacao.CreateTableF
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertCargo;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertDepartamento;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertFuncionario;
+import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.query.QueryFuncionario;
+
+import java.util.ArrayList;
 
 public class Main {
 
@@ -25,7 +28,7 @@ public class Main {
         InsertFuncionario insertFuncionario = new InsertFuncionario();
 
         for (int i = 0; i < TAMF; i++) {
-            funcs[i] = preencheFuncionario(12345 * (i + 1));
+            funcs[i] = preencheFuncionario(12340 * (i + 1));
             insertFuncionario.persisteFuncionario(funcs[i]);
         }
 
@@ -47,6 +50,14 @@ public class Main {
         for (int k = 0; k < TAMC; k++) {
             cargos[k] = preencheCargo(Integer.toString(12002 * (k + 1)));
             insertCargo.persisteCargo(cargos[k]);
+        }
+
+        QueryFuncionario queryFuncionario = new QueryFuncionario();
+        ArrayList<Funcionario> funcionarios = queryFuncionario.queryById();
+        for (Funcionario func : funcionarios) {
+            System.out.println(func.getId());
+            System.out.println(func.getNome());
+            System.out.println(func.getMatricula());
         }
 
     }
