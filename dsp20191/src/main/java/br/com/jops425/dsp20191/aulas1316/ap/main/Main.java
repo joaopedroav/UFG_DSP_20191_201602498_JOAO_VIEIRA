@@ -12,9 +12,6 @@ import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertCargo;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertDepartamento;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertFuncionario;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertLotacao;
-import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.query.QueryFuncionario;
-
-import java.util.ArrayList;
 
 public class Main {
 
