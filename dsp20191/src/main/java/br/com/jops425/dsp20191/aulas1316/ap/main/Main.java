@@ -67,7 +67,7 @@ public class Main {
         Date dateFinal = sdf.parse(dataFinal);
 
         for (int l = 0; l < TAMF; l++) {
-            preencheLotacao(l, dateInicial, dateFinal);
+            lots[l] = preencheLotacao(l, dateInicial, dateFinal);
             insertLotacao.persisteLotacao(lots[l]);
         }
 
