@@ -25,6 +25,7 @@ public class QueryCargo extends PersistenciaJdbc {
         while(rs.next()){
             cargo.setId(rs.getString("id"));
             cargo.setNome(rs.getString("nome"));
+            cargo.setSalario(rs.getDouble("salario"));
         }
 
         rs.close();

@@ -109,6 +109,7 @@ public class Main {
         Cargo cargo = new Cargo();
         cargo.setId(id);
         cargo.setNome("Cargo " + id);
+        cargo.setSalario(2000.00);
         return cargo;
     }
 
