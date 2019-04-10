@@ -26,8 +26,8 @@ public class QueryLotacao extends PersistenciaJdbc {
             lotacao.setId(rs.getLong("id"));
             lotacao.setDataInicial(rs.getDate("data_inicial"));
             lotacao.setDataFinal(rs.getDate("data_final"));
-            lotacao.setCargoId(rs.getString("id_cargo"));
-            lotacao.setDepartamentoId(rs.getString("id_departamento"));
+            lotacao.setCargoId(rs.getLong("id_cargo"));
+            lotacao.setDepartamentoId(rs.getLong("id_departamento"));
         }
 
         rs.close();

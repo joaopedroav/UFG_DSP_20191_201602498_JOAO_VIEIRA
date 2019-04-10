@@ -23,7 +23,7 @@ public class QueryDepartamento extends PersistenciaJdbc {
 
         ResultSet rs = ps.executeQuery(  );
         while(rs.next()){
-            departamento.setId(rs.getString("id"));
+            departamento.setId(rs.getLong("id"));
             departamento.setNome(rs.getString("nome"));
         }
 

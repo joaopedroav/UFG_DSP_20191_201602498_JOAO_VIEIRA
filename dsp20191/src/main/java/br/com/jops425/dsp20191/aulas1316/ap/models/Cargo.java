@@ -5,17 +5,17 @@ package br.com.jops425.dsp20191.aulas1316.ap.models;
  */
 public class Cargo {
 
-    private String id;
+    private long id;
 
     private String nome;
 
     private double salario;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

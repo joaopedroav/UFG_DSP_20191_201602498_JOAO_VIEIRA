@@ -41,7 +41,7 @@ public class Main {
         InsertDepartamento insertDepartamento = new InsertDepartamento();
 
         for (int j = 0; j < TAMD; j++) {
-            depts[j] = preencheDepartamento(Integer.toString(j));
+            depts[j] = preencheDepartamento(j);
             insertDepartamento.persisteDepartamento(depts[j]);
         }
 
@@ -51,7 +51,7 @@ public class Main {
         InsertCargo insertCargo = new InsertCargo();
 
         for (int k = 0; k < TAMC; k++) {
-            cargos[k] = preencheCargo(Integer.toString(k));
+            cargos[k] = preencheCargo(k);
             insertCargo.persisteCargo(cargos[k]);
         }
 
@@ -79,18 +79,18 @@ public class Main {
         lot.setDataInicial(dateInicial);
         lot.setDataFinal(dateFinal);
         if (id <= 2) {
-            lot.setCargoId("0");
-            lot.setDepartamentoId("0");
+            lot.setCargoId(0);
+            lot.setDepartamentoId(0);
         } else {
             if (id <= 5) {
-                lot.setCargoId("1");
-                lot.setDepartamentoId("1");
+                lot.setCargoId(1);
+                lot.setDepartamentoId(1);
             } else {
                 if (id <= 7) {
-                    lot.setCargoId("2");
-                    lot.setDepartamentoId("2");
+                    lot.setCargoId(2);
+                    lot.setDepartamentoId(2);
                 } else {
-                    lot.setDepartamentoId("3");
+                    lot.setDepartamentoId(3);
                 }
             }
         }
@@ -105,7 +105,7 @@ public class Main {
         return func;
     }
 
-    public static Cargo preencheCargo(String id) {
+    public static Cargo preencheCargo(long id) {
         Cargo cargo = new Cargo();
         cargo.setId(id);
         cargo.setNome("Cargo " + id);
@@ -113,7 +113,7 @@ public class Main {
         return cargo;
     }
 
-    public static Departamento preencheDepartamento(String id) {
+    public static Departamento preencheDepartamento(long id) {
         Departamento departamento = new Departamento();
         departamento.setId(id);
         departamento.setNome("Departamento " + id);
