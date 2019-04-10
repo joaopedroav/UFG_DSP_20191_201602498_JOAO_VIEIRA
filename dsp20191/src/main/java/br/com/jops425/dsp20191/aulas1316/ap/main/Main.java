@@ -13,6 +13,9 @@ import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertDeparta
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertFuncionario;
 import br.com.jops425.dsp20191.aulas1316.ap.persistence.dml.insert.InsertLotacao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Main {
 
     private static int TAMF = 10;
@@ -56,6 +59,66 @@ public class Main {
         CreateTableLotacao createTableLotacao = new CreateTableLotacao();
         createTableLotacao.criaTabela();
         InsertLotacao insertLotacao = new InsertLotacao();
+
+        String dataInicial = "20190102";
+        String dataFinal = "20250102";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Date dateInicial = sdf.parse(dataInicial);
+        Date dateFinal = sdf.parse(dataFinal);
+
+        for (int l = 0; l < TAMF; l++) {
+            preencheLotacao(l, dateInicial, dateFinal);
+        }
+
+        lots[0].setCargoId(cargos[0].getId());
+        lots[1].setCargoId(cargos[0].getId());
+        lots[2].setCargoId(cargos[0].getId());
+        lots[3].setCargoId(cargos[1].getId());
+        lots[4].setCargoId(cargos[1].getId());
+        lots[5].setCargoId(cargos[1].getId());
+        lots[6].setCargoId(cargos[1].getId());
+        lots[7].setCargoId(cargos[2].getId());
+        lots[8].setCargoId(cargos[2].getId());
+        lots[9].setCargoId(cargos[2].getId());
+        lots[0].setDepartamentoId(depts[0].getId());
+        lots[1].setDepartamentoId(depts[0].getId());
+        lots[2].setDepartamentoId(depts[0].getId());
+        lots[3].setDepartamentoId(depts[1].getId());
+        lots[4].setDepartamentoId(depts[1].getId());
+        lots[5].setDepartamentoId(depts[2].getId());
+        lots[6].setDepartamentoId(depts[2].getId());
+        lots[7].setDepartamentoId(depts[3].getId());
+        lots[8].setDepartamentoId(depts[3].getId());
+        lots[9].setDepartamentoId(depts[3].getId());
+
+        for (int l = 0; l < TAMF; l++) {
+            insertLotacao.persisteLotacao(lots[l]);
+        }
+
+    }
+
+    public static Lotacao preencheLotacao(long id, Date dateInicial, Date dateFinal, int i) {
+        Lotacao lot = new Lotacao();
+        lot.setId(id);
+        lot.setDataInicial(dateInicial);
+        lot.setDataFinal(dateFinal);
+        if (i <= 2) {
+            lot.setCargoId("0");
+            lot.setDepartamentoId("0");
+        } else {
+            if (i <= 5) {
+                lot.setCargoId("1");
+                lot.setDepartamentoId("1");
+            } else {
+                if (i <= 7) {
+                    lot.setCargoId("2");
+                    lot.setDepartamentoId("2");
+                } else {
+                    lot.setDepartamentoId("3");
+                }
+            }
+        }
+        return lot;
     }
 
     public static Funcionario preencheFuncionario(long id) {
