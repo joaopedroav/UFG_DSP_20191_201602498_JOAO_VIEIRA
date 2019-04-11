@@ -15,18 +15,23 @@ public class DeleteCargo extends PersistenciaJdbc {
         boolean result = false;
         try {
             Cargo cargo = new QueryCargo().queryById(id);
-            preparaPersistencia();
+            if (Long.valueOf(cargo.getId()) != null) {
+                preparaPersistencia();
 
-            String sql = "DELETE FROM Cargo WHERE id = ?";
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, id);
-            ps.executeUpdate();
-            result = true;
-            System.out.println("Cargo excluído corretamente");
-            ps.close();
+                String sql = "DELETE FROM Cargo WHERE id = ?";
+                PreparedStatement ps = connection.prepareStatement(sql);
+                ps.setLong(1, id);
+                ps.executeUpdate();
+                result = true;
+                System.out.println("Cargo excluído corretamente");
+                ps.close();
+            } else {
+                System.out.printf("Cargo com id %l não encontrado", id);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
     }
+
 }
