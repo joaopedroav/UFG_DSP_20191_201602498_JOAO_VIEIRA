@@ -14,12 +14,12 @@ public class QueryDepartamento extends PersistenciaJdbc {
         departamento = new Departamento();
     }
 
-    public Departamento querybyId(String id) throws Exception {
+    public Departamento querybyId(Long id) throws Exception {
         preparaPersistencia();
 
         String sql = "SELECT * FROM DEPARTAMENTO WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setString(1, id);
+        ps.setLong(1, id);
 
         ResultSet rs = ps.executeQuery(  );
         while(rs.next()){
