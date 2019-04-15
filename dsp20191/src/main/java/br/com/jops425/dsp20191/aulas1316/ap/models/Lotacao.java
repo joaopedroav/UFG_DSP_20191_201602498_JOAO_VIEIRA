@@ -9,13 +9,23 @@ public class Lotacao {
 
     private long id;
 
-    private Date dataInicial;
+    private String dataInicial;
 
-    private Date dataFinal;
+    private String dataFinal;
+
+    private long funcId;
 
     private long cargoId;
 
     private long departamentoId;
+
+    public long getFuncId() {
+        return funcId;
+    }
+
+    public void setFuncId(long funcId) {
+        this.funcId = funcId;
+    }
 
     public long getId() {
         return id;
@@ -25,19 +35,19 @@ public class Lotacao {
         this.id = id;
     }
 
-    public Date getDataInicial() {
+    public String getDataInicial() {
         return dataInicial;
     }
 
-    public void setDataInicial(Date dataInicial) {
+    public void setDataInicial(String dataInicial) {
         this.dataInicial = dataInicial;
     }
 
-    public Date getDataFinal() {
+    public String getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(Date dataFinal) {
+    public void setDataFinal(String dataFinal) {
         this.dataFinal = dataFinal;
     }
 

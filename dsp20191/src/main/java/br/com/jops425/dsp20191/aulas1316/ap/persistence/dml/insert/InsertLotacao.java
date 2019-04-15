@@ -11,16 +11,17 @@ public class InsertLotacao extends PersistenciaJdbc {
 
         preparaPersistencia();
 
-        Date dataInicial = new Date(lotacao.getDataInicial().getTime());
-        Date dataFinal = new Date(lotacao.getDataFinal().getTime());
+//        Date dataInicial = new Date(lotacao.getDataInicial().getTime());
+//        Date dataFinal = new Date(lotacao.getDataFinal().getTime());
 
         String sql = "INSERT INTO LOTACAO " +
                 "VALUES(" + lotacao.getId() +
-                "," + dataInicial +
-                "," + dataFinal +
-                ",'" + lotacao.getCargoId() +
-                "','" + lotacao.getDepartamentoId() +
-                "')";
+                "," + lotacao.getDataInicial() +
+                "," + lotacao.getDataFinal() +
+                "," + lotacao.getFuncId() +
+                "," + lotacao.getCargoId() +
+                "," + lotacao.getDepartamentoId() +
+                ")";
 
         stmt.executeUpdate(sql);
         System.out.println("A Lotação foi persistida corretamente.");

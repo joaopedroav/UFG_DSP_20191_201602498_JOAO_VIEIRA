@@ -62,22 +62,23 @@ public class Main {
 
         String dataInicial = "20190102";
         String dataFinal = "20250102";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        Date dateInicial = sdf.parse(dataInicial);
-        Date dateFinal = sdf.parse(dataFinal);
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+//        String dateInicial = sdf.parse(dataInicial);
+//        Date dateFinal = sdf.parse(dataFinal);
 
         for (int l = 0; l < TAMF; l++) {
-            lots[l] = preencheLotacao(l, dateInicial, dateFinal);
+            lots[l] = preencheLotacao(l, dataInicial, dataFinal, funcs[l]);
             insertLotacao.persisteLotacao(lots[l]);
         }
 
     }
 
-    public static Lotacao preencheLotacao(long id, Date dateInicial, Date dateFinal) {
+    public static Lotacao preencheLotacao(long id, String dateInicial, String dateFinal, Funcionario func) {
         Lotacao lot = new Lotacao();
         lot.setId(id);
         lot.setDataInicial(dateInicial);
         lot.setDataFinal(dateFinal);
+        lot.setFuncId(func.getId());
         if (id <= 2) {
             lot.setCargoId(0);
             lot.setDepartamentoId(0);
