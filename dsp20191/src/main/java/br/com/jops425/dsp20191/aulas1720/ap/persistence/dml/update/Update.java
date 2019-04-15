@@ -113,7 +113,7 @@ public class Update extends PersistenciaJdbc {
         return result;
     }
 
-    public boolean atualizaSalario(Long idCargo, Long idLot, double salario) {
+    public boolean atualizaSalario(Long idCargo, double salario) {
         boolean result = false;
         try {
             Cargo cargo = new QueryCargo().queryById(idCargo);
