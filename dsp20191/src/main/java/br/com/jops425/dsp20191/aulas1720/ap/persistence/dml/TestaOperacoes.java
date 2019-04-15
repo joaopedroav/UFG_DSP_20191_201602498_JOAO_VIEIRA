@@ -18,12 +18,6 @@ public class TestaOperacoes {
         update.atualizaFuncionario(0L, 201706897L);
         update.atualizaLotacao(0L, 1L);
 
-        Delete delete = new Delete();
-        delete.deletaLotacao(9L);
-        delete.deletaCargo(2L);
-        delete.deletaDepartamento(3L);
-        delete.deletaFuncionario(9L);
-
         update.atualizaSalario(2L, 3500.00);
         Query query = new Query();
         ArrayList<Funcionario> funcs = query.queryByIdCargo(2L);
@@ -32,5 +26,11 @@ public class TestaOperacoes {
         for(Funcionario fun : funcs) {
             System.out.println(fun.getNome());
         }
+
+        Delete delete = new Delete();
+        delete.deletaLotacao(9L);
+        delete.deletaCargo(2L);
+        delete.deletaDepartamento(3L);
+        delete.deletaFuncionario(9L);
     }
 }
