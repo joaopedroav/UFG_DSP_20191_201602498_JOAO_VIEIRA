@@ -17,7 +17,7 @@ public class QueryFuncionario extends PersistenciaJdbc {
     public Funcionario queryById(long id) throws Exception {
         preparaPersistencia();
 
-        String sql = "SELECT * FROM FUNCIONARIO";
+        String sql = "SELECT * FROM FUNCIONARIO WHERE id=?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setLong(1, id);
 
