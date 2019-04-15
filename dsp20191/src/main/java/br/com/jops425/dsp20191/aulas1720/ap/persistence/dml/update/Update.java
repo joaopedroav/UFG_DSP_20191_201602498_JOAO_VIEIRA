@@ -24,16 +24,16 @@ public class Update extends PersistenciaJdbc {
             if (Long.valueOf(cargo.getId()) != null) {
                 preparaPersistencia();
 
-                String sql = "UPDATE Cargo SET nome WHERE id = ?";
+                String sql = "UPDATE Cargo SET nome='" + nome + "' WHERE id = ?";
                 PreparedStatement ps = connection.prepareStatement(sql);
-                ps.setLong(1, id);
-                ps.setString(2, nome);
+                ps.setString(1, nome);
+                ps.setLong(2, id);
                 ps.executeUpdate();
                 result = true;
                 System.out.printf("Coluna 'nome' atualizada com o valor %d", nome);
                 ps.close();
             } else {
-                System.out.printf("Cargo com id %l não encontrado", id);
+                System.out.printf("Cargo com id %ld não encontrado", id);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,16 +48,16 @@ public class Update extends PersistenciaJdbc {
             if (Long.valueOf(cargo.getId()) != null) {
                 preparaPersistencia();
 
-                String sql = "UPDATE Departamento SET nome WHERE id = ?";
+                String sql = "UPDATE Departamento SET nome='" + nome + "' WHERE id = ?";
                 PreparedStatement ps = connection.prepareStatement(sql);
-                ps.setLong(1, id);
-                ps.setString(2, nome);
+                ps.setString(1, nome);
+                ps.setLong(2, id);
                 ps.executeUpdate();
                 result = true;
                 System.out.printf("Coluna 'nome' atualizada com o valor %d", nome);
                 ps.close();
             } else {
-                System.out.printf("Departamento com id %l não encontrado", id);
+                System.out.printf("Departamento com id %ld não encontrado", id);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,23 +65,23 @@ public class Update extends PersistenciaJdbc {
         return result;
     }
 
-    public boolean atualizaFuncionario(Long id, String nome, Long matricula) {
+    public boolean atualizaFuncionario(Long id, Long matricula) {
         boolean result = false;
         try {
             Funcionario cargo = new QueryFuncionario().queryById(id);
             if (Long.valueOf(cargo.getId()) != null) {
                 preparaPersistencia();
 
-                String sql = "UPDATE Funcionario SET matricula WHERE id = ?";
+                String sql = "UPDATE Funcionario SET matricula=" + id + " WHERE id = ?";
                 PreparedStatement ps = connection.prepareStatement(sql);
-                ps.setLong(1, id);
-                ps.setLong(2, matricula);
+                ps.setLong(1, matricula);
+                ps.setLong(2, id);
                 ps.executeUpdate();
                 result = true;
-                System.out.printf("Coluna 'matricula' atualizada com o valor %l", nome);
+                System.out.printf("Coluna 'matricula' atualizada com o valor %l", matricula);
                 ps.close();
             } else {
-                System.out.printf("Funcionario com id %l não encontrado", id);
+                System.out.printf("Funcionario com id %ld não encontrado", id);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,23 +89,23 @@ public class Update extends PersistenciaJdbc {
         return result;
     }
 
-    public boolean atualizaLotacao(Long id, String nome, Long idCargo) {
+    public boolean atualizaLotacao(Long id, Long idCargo) {
         boolean result = false;
         try {
             Lotacao cargo = new QueryLotacao().queryById(id);
             if (Long.valueOf(cargo.getId()) != null) {
                 preparaPersistencia();
 
-                String sql = "UPDATE Lotacao SET id_cargo WHERE id = ?";
+                String sql = "UPDATE Lotacao SET id_cargo=" + id + " WHERE id = ?";
                 PreparedStatement ps = connection.prepareStatement(sql);
-                ps.setLong(1, id);
-                ps.setLong(2, idCargo);
+                ps.setLong(1, idCargo);
+                ps.setLong(2, id);
                 ps.executeUpdate();
                 result = true;
-                System.out.printf("Coluna 'id_cargo' atualizada com o valor %l", nome);
+                System.out.printf("Coluna 'id_cargo' atualizada com o valor %l", idCargo);
                 ps.close();
             } else {
-                System.out.printf("Lotação com id %l não encontrada", id);
+                System.out.printf("Lotação com id %ld não encontrada", id);
             }
         } catch (Exception e) {
             e.printStackTrace();
