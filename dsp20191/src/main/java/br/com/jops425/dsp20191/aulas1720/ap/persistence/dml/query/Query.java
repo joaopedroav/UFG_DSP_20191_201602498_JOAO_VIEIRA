@@ -15,7 +15,7 @@ public class Query extends PersistenciaJdbc {
         funcionario = new Funcionario();
     }
 
-    public ArrayList<Funcionario> queryById(long idCargo) throws Exception {
+    public ArrayList<Funcionario> queryByIdCargo(long idCargo) throws Exception {
         preparaPersistencia();
 
         ArrayList<Funcionario> funcs = new ArrayList<Funcionario>();

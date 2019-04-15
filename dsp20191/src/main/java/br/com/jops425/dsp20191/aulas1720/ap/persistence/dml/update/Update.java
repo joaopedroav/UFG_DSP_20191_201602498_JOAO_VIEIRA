@@ -113,4 +113,27 @@ public class Update extends PersistenciaJdbc {
         return result;
     }
 
+    public boolean atualizaSalario(Long idCargo, Long idLot, double salario) {
+        boolean result = false;
+        try {
+            Cargo cargo = new QueryCargo().queryById(idCargo);
+            if (Long.valueOf(cargo.getId()) != null) {
+                preparaPersistencia();
+
+                String sql = "UPDATE Cargo SET salario=" + salario + " WHERE id =" + idCargo;
+                PreparedStatement ps = connection.prepareStatement(sql);
+                ps.setDouble(1, salario);
+                ps.setLong(2, idCargo);
+                ps.executeUpdate();
+                result = true;
+                System.out.println("Salário atualizado.");
+            } else {
+                System.out.printf("Cargo com id %ld não encontrado.", idCargo);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 }
