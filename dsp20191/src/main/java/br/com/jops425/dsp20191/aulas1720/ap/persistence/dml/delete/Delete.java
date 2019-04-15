@@ -32,7 +32,7 @@ public class Delete extends PersistenciaJdbc {
                 System.out.println("Cargo excluído corretamente");
                 ps.close();
             } else {
-                System.out.printf("Cargo com id %ld não encontrado", id);
+                System.out.println("Cargo com id " + id + " não encontrado");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class Delete extends PersistenciaJdbc {
                 System.out.println("Departamento excluído corretamente");
                 ps.close();
             } else {
-                System.out.printf("Departamento com id %ld não encontrado", id);
+                System.out.println("Departamento com id " + id + " não encontrado");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -78,7 +78,7 @@ public class Delete extends PersistenciaJdbc {
                 System.out.println("Funcionario excluído corretamente");
                 ps.close();
             } else {
-                System.out.printf("Funcionario com id %ld não encontrado", id);
+                System.out.println("Funcionario com id " + id + " não encontrado");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,7 +101,7 @@ public class Delete extends PersistenciaJdbc {
                 System.out.println("Lotação excluída corretamente");
                 ps.close();
             } else {
-                System.out.printf("Lotação com id %ld não encontrado", id);
+                System.out.println("Lotação com id " + id +" não encontrado");
             }
         } catch (Exception e) {
             e.printStackTrace();
