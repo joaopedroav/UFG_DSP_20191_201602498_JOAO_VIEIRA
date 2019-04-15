@@ -20,8 +20,8 @@ public class Query extends PersistenciaJdbc {
 
         ArrayList<Funcionario> funcs = new ArrayList<Funcionario>();
 
-        String sql = "SELECT id,nome,matricula FROM Funcionario JOIN Lotacao" +
-                "WHERE Funcionario.id = Lotacao.id_funcionario AND id_cargo = 1";
+        String sql = "SELECT * FROM Funcionario JOIN Lotacao " +
+                "WHERE Funcionario.id = Lotacao.id_funcionario AND id_cargo=?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setLong(1, idCargo);
 
