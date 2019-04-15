@@ -18,7 +18,7 @@ public class TestaOperacoes {
         update.atualizaFuncionario(0L, 201706897L);
         update.atualizaLotacao(0L, 1L);
 
-        update.atualizaSalario(2L, 3500.00);
+        update.atualizaSalario(0L, 3500.00);
         Query query = new Query();
         ArrayList<Funcionario> funcs = query.queryByIdCargo(2L);
 
