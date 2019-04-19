@@ -4,7 +4,7 @@ import java.io.*;
 
 public class AvaliacaoAluno {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         final String caminho = "src/main/resources/aluno.dat";
         Aluno aluno = new Aluno();
         aluno.setNome("Paul Thomas-Anderson");
@@ -13,6 +13,9 @@ public class AvaliacaoAluno {
         aluno.setNota1(10.0);
         aluno.setNota2(9.5);
         aluno.setFrequencia(60);
+        gravarInstancia(caminho, aluno);
+        Aluno alunoLido = lerDados(caminho);
+        System.out.println(alunoLido.getAvaliacao());
 
     }
 
@@ -32,9 +35,17 @@ public class AvaliacaoAluno {
         }
     }
 
-    public static void lerDados(String caminho) throws IOException {
+    public static Aluno lerDados(String caminho) throws IOException {
         Aluno alunoLido = new Aluno();
         FileInputStream fis = new FileInputStream(caminho);
         DataInputStream dis = new DataInputStream(fis);
+        alunoLido.setNome(dis.readUTF());
+        alunoLido.setMatricula(dis.readLong());
+        alunoLido.setDisciplina(dis.readUTF());
+        alunoLido.setFrequencia(dis.readInt());
+        alunoLido.setNota1(dis.readDouble());
+        alunoLido.setNota2(dis.readDouble());
+        dis.close();
+        return alunoLido;
     }
 }
