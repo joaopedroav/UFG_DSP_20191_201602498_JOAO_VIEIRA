@@ -14,14 +14,11 @@ import java.util.List;
  */
 public class Main {
 
-    private static Server server = null;
-    private static VeiculoRepository veiculoRepository;
-
     public static void main(String[] args) throws SQLException {
         String modelo = "Ferrari", marca = "Hyundai";
         Long id = 123L, id2 = 100L;
-        server = Server.createTcpServer().start();
-        veiculoRepository = new VeiculoRepositoryImpl();
+        Server server = Server.createTcpServer().start();
+        VeiculoRepository veiculoRepository = new VeiculoRepositoryImpl();
         createVeiculo(veiculoRepository);
         readVeiculo(veiculoRepository, modelo);
         uptateVeiculo(veiculoRepository, id, marca);
@@ -36,7 +33,7 @@ public class Main {
         veiculo.setAnoModelo(2019);
         veiculo.setMarca("Chery");
         veiculo.setPotenciaMotor(5000);
-        veiculo = vr.create(veiculo);
+        Veiculo veiculo2 = vr.create(veiculo);
         System.out.println("Veículo adicionado.");
     }
 
