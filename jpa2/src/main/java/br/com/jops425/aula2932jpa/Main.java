@@ -6,6 +6,7 @@ import br.com.jops425.aula2932jpa.model.Reino;
 import br.com.jops425.aula2932jpa.model.Sudito;
 import br.com.jops425.aula2932jpa.persistencia.DaoGenerico;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,10 +28,16 @@ public class Main {
         monarca.setReino(reino);
 
         Sudito sudito = new Sudito();
+        sudito.setNome("Sarah Churchill");
+        sudito.setMonarca(monarca);
         Sudito sudito1 = new Sudito();
+        sudito1.setNome("Abigail Masham");
+        sudito1.setMonarca(monarca);
         Sudito sudito2 = new Sudito();
+        sudito2.setNome("Mr. Spencer");
+        sudito2.setMonarca(monarca);
 
-        List<Sudito> suditos = null;
+        ArrayList<Sudito> suditos = new ArrayList<>();
         suditos.add(sudito);
         suditos.add(sudito1);
         suditos.add(sudito2);
@@ -41,6 +48,13 @@ public class Main {
         Moeda moeda2 = new Moeda();
         moeda2.setNome("Prata");
         moeda2.setSuditos(suditos);
+
+        ArrayList<Moeda> moedas = new ArrayList<>();
+        moedas.add(moeda);
+        moedas.add(moeda2);
+        sudito.setMoedas(moedas);
+        sudito1.setMoedas(moedas);
+        sudito2.setMoedas(moedas);
 
         DaoGenerico<Monarca> daoMn = new DaoGenerico<>();
         DaoGenerico<Reino> daoR = new DaoGenerico<>();

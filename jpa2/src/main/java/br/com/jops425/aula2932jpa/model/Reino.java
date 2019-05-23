@@ -22,7 +22,7 @@ public class Reino implements EntidadeBase {
 
     private String continente;
 
-    @OneToOne(mappedBy = "reino")
+    @OneToOne
     private Monarca monarca;
 
     @Override

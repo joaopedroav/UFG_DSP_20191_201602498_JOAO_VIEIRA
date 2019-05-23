@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class ConnectionFactory {
 	
-	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("jpaexemplo");;
+	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("br.com.jops425.aulas2932jpa");;
 	
 	public static EntityManager getEntityManager(){
 		return factory.createEntityManager();
